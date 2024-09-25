@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Quarter — Compilation Performance Task</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.esc.cam.ac.uk/sites/esc.cam.ac.uk/files/styles/leading/public/edited_banner_4.png?itok=vFUmJvUR'); 
+            background-size: cover;
+            background-attachment: fixed;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        header {
+            background-color: rgba(0, 51, 102, 0.85);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            letter-spacing: 1px;
+            animation: fadeIn 2s ease;
+        }
+        header p {
+            font-size: 1.2em;
+            font-style: italic;
+            animation: fadeIn 2.5s ease;
+        }
+
+        section.solo {
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .card-solo {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            min-width: 280px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .card-solo:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        .card-solo h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #ffcc00;
+        }
+        .card-solo p {
+            font-size: 1.1em;
+            color: #fff;
+        }
+        .card-solo .card-icon {
+            font-size: 4em;
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+        .learn-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            background-color: #ffcc00;
+            color: #003366;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .learn-more:hover {
+            background-color: #fff;
+            color: #003366;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 40px auto;
+            max-width: 1200px;
+        }
+        .card {
+            width: 30%;
+            margin: 15px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            min-width: 280px;
+        }
+        .card:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        .card h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #ffcc00;
+        }
+        .card p {
+            font-size: 1.1em;
+            color: #fff;
+        }
+        .card-icon {
+            font-size: 4em;
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+
+        /* Tooltip Styling */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 150px;
+            background-color: rgba(0, 51, 102, 0.9);
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -75px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        @media screen and (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+        }
+
+        footer {
+            background-color: rgba(0, 51, 102, 0.85);
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.4);
+        }
+        footer p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>First Quarter — Compilation Performance Task</h1>
+        <p>Explore the wonders of Earth, Weather, Oceans, and Space</p>
+    </header>
+
+    
+    <section class="solo" id="Information">
+        <div class="card-solo">
+            <div class="card-icon">ℹ</div>
+            <h3>Important Information</h3>
+            <p>This section contains key details about the task.</p>
+            <div class="tooltip">ℹ
+                <span class="tooltiptext">This is vital info.</span>
+            </div>
+            <a href="#InformationSection" class="learn-more">Learn More</a>
+        </div>
+    </section>
+
+    
+    <section id="Earth Science">
+        
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">🌍</div>
+                <h3>Earth Science</h3>
+                <p>wonders of our planet.</p>
+                <div class="tooltip">ℹ
+                    <span class="tooltiptext">Learn about Earth's structure.</span>
+                </div>
+                <a href="#EarthScienceDetails" class="learn-more">Learn More</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚗️</div>
+                <h3>General Chemistry</h3>
+                <p>Understand Chemistry.</p>
+                <div class="tooltip">ℹ
+                    <span class="tooltiptext">Chemistry's basic reactions.</span>
+                </div>
+                <a href="#ChemistryDetails" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="Philosophy">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Introduction to Philosophy</h3>
+                <p> philosophers.</p>
+                <div class="tooltip">ℹ
+                    <span class="tooltiptext">Philosophy fundamentals.</span>
+                </div>
+                <a href="#PhilosophyDetails" class="learn-more">Learn More</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">💬</div>
+                <h3>Komunikasyon</h3>
+                <p>Master communication.</p>
+                <div class="tooltip">ℹ
+                    <span class="tooltiptext">Basics of human interaction.</span>
+                </div>
+                <a href="#CommunicationDetails" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="Mathematics">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">🧮</div>
+                <h3>General Mathematics</h3>
+                <p>general math .</p>
+                <div class="tooltip">ℹ
+                    <span class="tooltiptext">Gen math fundamentals.</span>
+                </div>
+                <a href="#MathDetails" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Earth Science Resources | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
